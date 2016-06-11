@@ -70,13 +70,36 @@ swiftmailer:
 
 fos_user:
     db_driver: orm
-    firewall_name: main
+    firewall_name: oauth_authorize
     user_class: RestApi\UsersBundle\Entity\User
+    service:
+        mailer: fos_user.mailer.twig_swift
+    resetting:
+        token_ttl: 900
+        email:
+            template: UsersBundle:Email:reset-email.html.twig
+    registration:
+        confirmation:
+            enabled: true
+    from_email:
+        address:        info@apiproject.com
+        sender_name:    RestApi.com
 
 
 nelmio_api_doc: ~
 
 fos_rest:
+    param_fetcher_listener:
+    view:
+        view_response_listener: 'force'
+        formats:
+            json: true
+            html: false
+            rss: false
+            xml: true
+        templating_formats:
+            html: false
+        failed_validation: HTTP_BAD_REQUEST
     routing_loader:
         default_format: json                            # All responses should be JSON formated
         include_format: false
@@ -90,3 +113,8 @@ fos_oauth_server:
     auth_code_class:     RestApi\ApiBundle\Entity\AuthCode
     service:
         user_provider: fos_user.user_manager
+        options:
+            # Changing tokens and authcode lifetime
+            access_token_lifetime: 4233600
+            #refresh_token_lifetime: 1209600
+            #auth_code_lifetime: 30

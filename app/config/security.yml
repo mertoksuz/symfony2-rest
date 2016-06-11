@@ -7,32 +7,19 @@ security:
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
-        fos_userbundle:
-            id: fos_user.user_provider.username
+        restapi.user_provider:
+            id: restapi.user_provider
 
     firewalls:
-        oauth_token:
-                pattern:    ^/oauth/v2/token
-                security:   false
-
-        oauth_authorize:
-            pattern:    ^/oauth/v2/auth
-            form_login:
-                provider: fos_userbundle
-                check_path: fos_user_security_check
-                login_path: fos_user_security_login
-            anonymous: true
-            # Add your favorite authentication process here
-
         api:
-            pattern:    ^/api
+            pattern:    ^/2
             fos_oauth:  true
             stateless:  true
-            anonymous:  false # can be omitted as its default value
+            anonymous:  true
+            provider: restapi.user_provider
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
