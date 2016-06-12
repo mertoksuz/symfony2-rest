@@ -12,7 +12,7 @@ security:
 
     firewalls:
         api:
-            pattern:    ^/2
+            pattern:    ^/api
             fos_oauth:  true
             stateless:  true
             anonymous:  true
