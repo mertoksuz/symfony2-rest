@@ -1,4 +1,8 @@
-rest-api
-========
+##Rest API
+Rest API for which projects needs an api.
 
-A Symfony project created on June 11, 2016, 1:54 pm.
+#v1.0.0
+
+    - Symfony2.8 Installed and configured.
+    - FOSUserBundle, FOSOauthServerBundle, FOSRestBundle, JMSSerializerBundle, NelmioApiDocBundle added and configured.
+    
