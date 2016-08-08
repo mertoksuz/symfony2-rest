@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/symfony2-rest/badge/?version=latest)](http://symfony2-rest.readthedocs.io/en/latest/?badge=latest)
+
 ##Rest API
 Rest API for which projects needs an api.
 
