@@ -1,10 +1,21 @@
 dist: trusty
 sudo: required
+<<<<<<< HEAD
+=======
+
+services:
+  - mysql
+>>>>>>> 79abb4a... travis update
 
 language: php
 
+<<<<<<< HEAD
 services:
   - docker
+=======
+before_script:
+  - mysql -u root -e 'CREATE DATABASE symfony;'
+>>>>>>> 79abb4a... travis update
 
 script:
   - docker pull mertoksuz/ubuntu:v2
