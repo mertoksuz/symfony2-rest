@@ -1,0 +1,12 @@
+dist: trusty
+sudo: required
+
+language: php
+
+services:
+  - docker
+
+script:
+  - docker pull mertoksuz/ubuntu:v2
+  - docker run -it mertoksuz/ubuntu:v2 bash
+  - composer install
