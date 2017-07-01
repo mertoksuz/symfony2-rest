@@ -2,9 +2,19 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use \PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 
 class AppKernel extends Kernel
 {
+    protected function getContainerBaseClass()
+    {
+        if ('test' === $this->environment) {
+            return MockerContainer::class;
+        }
+
+        return parent::getContainerBaseClass();
+    }
+
     public function registerBundles()
     {
         $bundles = array(

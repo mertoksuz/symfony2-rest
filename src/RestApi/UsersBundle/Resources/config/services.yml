@@ -1,4 +1,4 @@
 services:
   restapi.user_provider:
       class: RestApi\UsersBundle\Security\Provider\UserProvider
-      arguments: [@fos_user.user_manager]
+      arguments: ["@fos_user.user_manager"]

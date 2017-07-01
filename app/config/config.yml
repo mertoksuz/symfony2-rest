@@ -112,7 +112,7 @@ fos_oauth_server:
     refresh_token_class: RestApi\ApiBundle\Entity\RefreshToken
     auth_code_class:     RestApi\ApiBundle\Entity\AuthCode
     service:
-        user_provider: fos_user.user_manager
+        user_provider: fos_user.user_provider
         options:
             # Changing tokens and authcode lifetime
             access_token_lifetime: 4233600
