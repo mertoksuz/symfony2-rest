@@ -3,9 +3,16 @@ dist: trusty
 services:
   - mysql
 
+git:
+  submodules: false
+
 language: php
 php:
   - 7.0
+
+before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
 
 before_script:
   - mysql -u root -e 'CREATE DATABASE symfony;'
