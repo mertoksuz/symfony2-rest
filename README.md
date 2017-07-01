@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/symfony2-rest/badge/?version=latest)](http://symfony2-rest.readthedocs.io/en/latest/?badge=latest) ![Travis Status](https://travis-ci.org/mertoksuz/symfony2-rest.svg?branch=master)
+[![Documentation Status](https://readthedocs.org/projects/symfony2-rest/badge/?version=latest)](http://symfony2-rest.readthedocs.io/en/latest/?badge=latest) [![Build Status](https://travis-ci.org/mertoksuz/symfony2-rest.svg?branch=master)](https://travis-ci.org/mertoksuz/symfony2-rest)
 
 ##Rest API
 Rest API for which projects needs an api.
